@@ -1,7 +1,9 @@
 import axios from 'axios';
 
 const server = axios.create({
-  baseURL: 'http://localhost:3000',
+  baseURL: process.env.REACT_APP_SERVER_URI
+    ? process.env.REACT_APP_SERVER_URI
+    : 'http://localhost:3000',
 });
 
 function fetchPosts() {
